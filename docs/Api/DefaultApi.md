@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**devicesIdDelete**](DefaultApi.md#devicesIdDelete) | **DELETE** /devices/{id} | Delete a Device
 [**devicesIdDistancePut**](DefaultApi.md#devicesIdDistancePut) | **PUT** /devices/{id}/distance | Update the distance counter of the Device
 [**devicesIdPut**](DefaultApi.md#devicesIdPut) | **PUT** /devices/{id} | Update a Device
+[**devicesNearestGet**](DefaultApi.md#devicesNearestGet) | **GET** /devices/nearest | Searches for nearest Device
 [**devicesPost**](DefaultApi.md#devicesPost) | **POST** /devices | Create a Device
 [**driversGet**](DefaultApi.md#driversGet) | **GET** /drivers | Fetch a list of Drivers
 [**driversIdDelete**](DefaultApi.md#driversIdDelete) | **DELETE** /drivers/{id} | Delete a Driver
@@ -47,6 +48,7 @@ Method | HTTP request | Description
 [**permissionsPost**](DefaultApi.md#permissionsPost) | **POST** /permissions | Link an Object to another Object
 [**positionsGet**](DefaultApi.md#positionsGet) | **GET** /positions | Fetches a list of Positions
 [**reportsDeviceRouteGet**](DefaultApi.md#reportsDeviceRouteGet) | **GET** /reports/deviceRoute | Fetch a list of Positions within between start and end points
+[**reportsDisputeGet**](DefaultApi.md#reportsDisputeGet) | **GET** /reports/dispute | Fetch a list of Positions within the time period for the Devices or Groups and Users to compare
 [**reportsEventsGet**](DefaultApi.md#reportsEventsGet) | **GET** /reports/events | Fetch a list of Events within the time period for the Devices or Groups
 [**reportsRouteGet**](DefaultApi.md#reportsRouteGet) | **GET** /reports/route | Fetch a list of Positions within the time period for the Devices or Groups
 [**reportsStopsGet**](DefaultApi.md#reportsStopsGet) | **GET** /reports/stops | Fetch a list of ReportStops within the time period for the Devices or Groups
@@ -1128,6 +1130,64 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
  **body** | [**\Swagger\Client\Model\Device**](../Model/Device.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Device**](../Model/Device.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **devicesNearestGet**
+> \Swagger\Client\Model\Device devicesNearestGet($tractoken, $latitude, $longitude)
+
+Searches for nearest Device
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tractoken = "tractoken_example"; // string | 
+$latitude = 8.14; // float | 
+$longitude = 8.14; // float | 
+
+try {
+    $result = $apiInstance->devicesNearestGet($tractoken, $latitude, $longitude);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->devicesNearestGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tractoken** | **string**|  |
+ **latitude** | **float**|  |
+ **longitude** | **float**|  |
 
 ### Return type
 
@@ -2482,6 +2542,70 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **reportsDisputeGet**
+> \Swagger\Client\Model\Position[] reportsDisputeGet($from, $to, $device_id, $user_id, $group_id)
+
+Fetch a list of Positions within the time period for the Devices or Groups and Users to compare
+
+At least one _deviceId_ or one _groupId_ must be passed
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
+$to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
+$device_id = array(56); // int[] | 
+$user_id = array(56); // int[] | 
+$group_id = array(56); // int[] | 
+
+try {
+    $result = $apiInstance->reportsDisputeGet($from, $to, $device_id, $user_id, $group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->reportsDisputeGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **\DateTime**| in IS0 8601 format. eg. &#x60;1963-11-22T18:30:00Z&#x60; |
+ **to** | **\DateTime**| in IS0 8601 format. eg. &#x60;1963-11-22T18:30:00Z&#x60; |
+ **device_id** | [**int[]**](../Model/int.md)|  | [optional]
+ **user_id** | [**int[]**](../Model/int.md)|  | [optional]
+ **group_id** | [**int[]**](../Model/int.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Position[]**](../Model/Position.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **reportsEventsGet**
 > \Swagger\Client\Model\Event[] reportsEventsGet($from, $to, $device_id, $group_id, $type)
 
@@ -3180,7 +3304,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sessionRegisterGet**
-> \Swagger\Client\Model\User sessionRegisterGet($token, $geo_id)
+> \Swagger\Client\Model\User sessionRegisterGet($token, $geo_id, $app_version)
 
 Either logs in or creates anonymous user. Sets geofence id if provided.
 
@@ -3203,9 +3327,10 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
 );
 $token = "token_example"; // string | 
 $geo_id = 56; // int | 
+$app_version = "app_version_example"; // string | 
 
 try {
-    $result = $apiInstance->sessionRegisterGet($token, $geo_id);
+    $result = $apiInstance->sessionRegisterGet($token, $geo_id, $app_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sessionRegisterGet: ', $e->getMessage(), PHP_EOL;
@@ -3219,6 +3344,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**|  | [optional]
  **geo_id** | **int**|  | [optional]
+ **app_version** | **string**|  | [optional]
 
 ### Return type
 
