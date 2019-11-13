@@ -8,12 +8,12 @@ git_repo_id=$2
 release_note=$3
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id="siilats"
+    git_user_id="bolt-mobility"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
 if [ "$git_repo_id" = "" ]; then
-    git_repo_id="traccar-php"
+    git_repo_id="traccar-api-php"
     echo "[INFO] No command line input provided. Set \$git_repo_id to $git_repo_id"
 fi
 
