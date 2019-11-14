@@ -5294,7 +5294,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $content
             ];
 
         } catch (ApiException $e) {
@@ -7218,7 +7219,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $content
             ];
 
         } catch (ApiException $e) {
