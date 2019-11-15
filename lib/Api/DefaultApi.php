@@ -169,7 +169,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -247,7 +248,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -446,7 +448,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -494,7 +496,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -698,7 +700,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -770,7 +773,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -983,7 +987,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -1053,7 +1058,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -1253,7 +1259,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -1325,7 +1332,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -1509,7 +1517,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1557,7 +1565,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1761,7 +1769,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -1833,7 +1842,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -2046,7 +2056,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -2116,7 +2127,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -2322,7 +2334,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -2400,7 +2413,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -2599,7 +2613,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2647,7 +2661,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2851,7 +2865,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -2923,7 +2938,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -3136,7 +3152,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -3206,7 +3223,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -3404,7 +3422,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -3474,7 +3493,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -3667,7 +3687,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -3745,7 +3766,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -3945,7 +3967,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -4017,7 +4040,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -4225,7 +4249,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -4305,7 +4330,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -4509,7 +4535,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4557,7 +4583,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4747,7 +4773,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4797,7 +4823,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -5011,7 +5037,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -5083,7 +5110,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -5369,7 +5397,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -5590,7 +5619,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -5660,7 +5690,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -5860,7 +5891,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -5938,7 +5970,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -6137,7 +6170,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -6185,7 +6218,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -6389,7 +6422,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -6461,7 +6495,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -6674,7 +6709,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -6744,7 +6780,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -6938,7 +6975,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -7008,7 +7046,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -7298,7 +7337,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -7497,7 +7537,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -7545,7 +7585,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -7749,7 +7789,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -7821,7 +7862,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -8034,7 +8076,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -8104,7 +8147,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -8304,7 +8348,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -8376,7 +8421,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -8560,7 +8606,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -8608,7 +8654,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -8812,7 +8858,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -8884,7 +8931,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -9097,7 +9145,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -9167,7 +9216,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -9373,7 +9423,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -9451,7 +9502,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -9650,7 +9702,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -9698,7 +9750,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -9902,7 +9954,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -9974,7 +10027,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -10187,7 +10241,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -10257,7 +10312,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -10439,7 +10495,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -10485,7 +10541,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -10670,7 +10726,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -10738,7 +10795,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -10912,7 +10970,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -10960,7 +11018,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -11157,7 +11215,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -11227,7 +11286,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -11431,7 +11491,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -11507,7 +11568,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -11719,7 +11781,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -11793,7 +11856,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -12022,7 +12086,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -12100,7 +12165,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -12342,7 +12408,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -12420,7 +12487,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -12660,7 +12728,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -12736,7 +12805,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -12968,7 +13038,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -13044,7 +13115,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -13276,7 +13348,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -13352,7 +13425,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -13584,7 +13658,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -13660,7 +13735,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -13953,7 +14029,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -14141,7 +14218,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -14211,7 +14289,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -14393,7 +14472,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -14439,7 +14518,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -14697,7 +14776,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -14900,7 +14980,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -14980,7 +15061,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -15232,7 +15314,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -15306,7 +15389,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -15529,7 +15613,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -15601,7 +15686,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -15890,7 +15976,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -16099,7 +16186,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -16175,7 +16263,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -16407,7 +16496,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -16477,7 +16567,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -16671,7 +16762,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -16743,7 +16835,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -16953,7 +17046,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -17023,7 +17117,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -17216,7 +17311,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -17286,7 +17382,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -17465,7 +17562,7 @@ class DefaultApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            return [null, $statusCode, $response->getHeaders(), $response];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -17513,7 +17610,7 @@ class DefaultApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return [null, $response->getStatusCode(), $response->getHeaders(), $response];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -17715,7 +17812,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -17785,7 +17883,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -17990,7 +18089,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -18062,7 +18162,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {
@@ -18275,7 +18376,8 @@ class DefaultApi
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
-                $response->getHeaders()
+                $response->getHeaders(),
+                $response
             ];
 
         } catch (ApiException $e) {
@@ -18345,7 +18447,8 @@ class DefaultApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
+                        $response
                     ];
                 },
                 function ($exception) {

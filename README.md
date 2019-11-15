@@ -20,7 +20,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/bolt-mobility/traccar-api-php"
+      "url": "https://github.com/bolt-mobility/traccar-api-php.git"
     }
   ],
   "require": {
